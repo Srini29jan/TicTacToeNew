@@ -57,12 +57,6 @@ public class Game {
                 && getPlayerAt(POSITION_TWO, POSITION_TWO) == player;
     }
 
-    private boolean isThirdColumnFilledByPlayerX() {
-        return getPlayerAt(POSITION_ZERO, POSITION_TWO) == PLAYER_X
-                && getPlayerAt(POSITION_ONE, POSITION_TWO) == PLAYER_X
-                && getPlayerAt(POSITION_TWO, POSITION_TWO) == PLAYER_X;
-    }
-
     private boolean isSecondColumnFilledByPlayer(char player) {
         return getPlayerAt(POSITION_ZERO, POSITION_ONE) == player
                 && getPlayerAt(POSITION_ONE, POSITION_ONE) == player
