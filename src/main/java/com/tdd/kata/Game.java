@@ -38,6 +38,12 @@ public class Game {
             return PLAYER_O;
         }
 
+        if (getPlayerAt(POSITION_ZERO, POSITION_ZERO) == PLAYER_X
+                && getPlayerAt(POSITION_ONE, POSITION_ONE) == PLAYER_X
+                && getPlayerAt(POSITION_TWO, POSITION_TWO) == PLAYER_X) {
+            return PLAYER_X;
+        }
+
         return '\0';
     }
 
