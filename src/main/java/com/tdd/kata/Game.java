@@ -27,6 +27,6 @@ public class Game {
     }
 
     public char getWinner() {
-        return 'X';
+        return PLAYER_X;
     }
 }
