@@ -30,9 +30,7 @@ public class Game {
     }
 
     public char getWinner() {
-        if (isAnyRowFilledByPlayer(PLAYER_X) || isColumnFilledByPlayer(POSITION_ZERO, PLAYER_X)
-                || isColumnFilledByPlayer(POSITION_ONE, PLAYER_X)
-                || isColumnFilledByPlayer(POSITION_TWO, PLAYER_X)) {
+        if (isAnyRowFilledByPlayer(PLAYER_X) || isAnyColumnFilledByPlayerX()) {
             return PLAYER_X;
         }
 
@@ -43,6 +41,12 @@ public class Game {
         }
 
         return '\0';
+    }
+
+    private boolean isAnyColumnFilledByPlayerX() {
+        return isColumnFilledByPlayer(POSITION_ZERO, PLAYER_X)
+                || isColumnFilledByPlayer(POSITION_ONE, PLAYER_X)
+                || isColumnFilledByPlayer(POSITION_TWO, PLAYER_X);
     }
 
     private boolean isColumnFilledByPlayer(int columnPosition, char player) {
