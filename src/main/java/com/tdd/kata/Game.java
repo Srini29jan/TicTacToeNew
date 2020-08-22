@@ -45,10 +45,10 @@ public class Game {
         return '\0';
     }
 
-    private boolean isColumnFilledByPlayer(int columnZero, char player) {
-        return getPlayerAt(POSITION_ZERO, columnZero) == player
-                && getPlayerAt(POSITION_ONE, columnZero) == player
-                && getPlayerAt(POSITION_TWO, columnZero) == player;
+    private boolean isColumnFilledByPlayer(int columnPosition, char player) {
+        return getPlayerAt(POSITION_ZERO, columnPosition) == player
+                && getPlayerAt(POSITION_ONE, columnPosition) == player
+                && getPlayerAt(POSITION_TWO, columnPosition) == player;
     }
 
     private boolean isAnyRowFilledByPlayer(char player) {
