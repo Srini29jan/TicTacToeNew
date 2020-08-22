@@ -1,8 +1,11 @@
 package com.tdd.kata;
 
+import org.hamcrest.Matcher;
+import org.hamcrest.core.Is;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertThat;
 
 public class GameTest {
     @Test
@@ -11,6 +14,6 @@ public class GameTest {
 
         game.playAt(0, 0);
 
-        assertEquals('X', game.getPlayerAt(0, 0));
+        assertThat(game.getPlayerAt(0, 0), Is.is('X'));
     }
 }
