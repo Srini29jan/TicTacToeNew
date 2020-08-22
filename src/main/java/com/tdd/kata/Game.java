@@ -31,20 +31,14 @@ public class Game {
 
     public char getWinner() {
         if (isAnyRowFilledByPlayer(PLAYER_X) || isColumnFilledByPlayer(POSITION_ZERO, PLAYER_X)
-                || isColumnFilledByPlayer(POSITION_ONE, PLAYER_X)) {
+                || isColumnFilledByPlayer(POSITION_ONE, PLAYER_X)
+                || isColumnFilledByPlayer(POSITION_TWO, PLAYER_X)) {
             return PLAYER_X;
         }
 
         if (isAnyRowFilledByPlayer(PLAYER_O) || isColumnFilledByPlayer(POSITION_ZERO, PLAYER_O)
-                || isColumnFilledByPlayer(POSITION_ONE, PLAYER_O)) {
-            return PLAYER_O;
-        }
-
-        if (isColumnFilledByPlayer(POSITION_TWO, PLAYER_X)) {
-            return PLAYER_X;
-        }
-
-        if (isColumnFilledByPlayer(POSITION_TWO, PLAYER_O)) {
+                || isColumnFilledByPlayer(POSITION_ONE, PLAYER_O)
+                || isColumnFilledByPlayer(POSITION_TWO, PLAYER_O)) {
             return PLAYER_O;
         }
 
