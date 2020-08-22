@@ -57,4 +57,19 @@ public class GameTest {
 
         assertThat(game.getWinner(), Is.is(PLAYER_O));
     }
+
+    @Test
+    public void getWinnerShouldReturnEmptyCharacterIfXAndONotFilledFirstRow() {
+        game.playAt(POSITION_ZERO, POSITION_ZERO);
+        game.playAt(POSITION_ONE, POSITION_ONE);
+        game.playAt(POSITION_TWO, POSITION_ZERO);
+        game.playAt(POSITION_ONE, POSITION_ZERO);
+        game.playAt(POSITION_ZERO, POSITION_ONE);
+        game.playAt(POSITION_ZERO, POSITION_TWO);
+        game.playAt(POSITION_TWO, POSITION_TWO);
+        game.playAt(POSITION_TWO, POSITION_ONE);
+        game.playAt(POSITION_ONE, POSITION_TWO);
+
+        assertThat(game.getWinner(), Is.is('\0'));
+    }
 }

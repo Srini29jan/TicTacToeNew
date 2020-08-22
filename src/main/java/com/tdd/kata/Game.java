@@ -34,7 +34,13 @@ public class Game {
             return PLAYER_X;
         }
 
-        return PLAYER_O;
+        if(getPlayerAt(POSITION_ZERO, POSITION_ZERO) == PLAYER_O
+                && getPlayerAt(POSITION_ZERO, POSITION_ONE) == PLAYER_O
+                && getPlayerAt(POSITION_ZERO, POSITION_TWO) == PLAYER_O) {
+            return PLAYER_O;
+        }
+
+        return '\0';
     }
 
     private boolean isFirstRowFilledByPlayerX() {
