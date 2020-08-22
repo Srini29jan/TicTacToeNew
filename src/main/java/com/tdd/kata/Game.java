@@ -2,9 +2,9 @@ package com.tdd.kata;
 
 public class Game {
 
-    private static final char PLAYER_X = 'X';
-    private static final char PLAYER_O = 'O';
     private static final int GRID_SIZE = 3;
+    private static final char PLAYER_O = 'O';
+    private static final char PLAYER_X = 'X';
     private final char[][] board = new char[GRID_SIZE][GRID_SIZE];
     private char previousPlayer;
 
