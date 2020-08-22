@@ -30,10 +30,16 @@ public class Game {
     }
 
     public char getWinner() {
-        if(getPlayerAt(POSITION_ZERO, POSITION_ZERO) == PLAYER_X && getPlayerAt(POSITION_ZERO, POSITION_ONE) == PLAYER_X && getPlayerAt(POSITION_ZERO, POSITION_TWO) == PLAYER_X) {
+        if(isFirstRowFilledByPlayerX()) {
             return PLAYER_X;
         }
 
         return PLAYER_O;
+    }
+
+    private boolean isFirstRowFilledByPlayerX() {
+        return getPlayerAt(POSITION_ZERO, POSITION_ZERO) == PLAYER_X
+                && getPlayerAt(POSITION_ZERO, POSITION_ONE) == PLAYER_X
+                && getPlayerAt(POSITION_ZERO, POSITION_TWO) == PLAYER_X;
     }
 }
