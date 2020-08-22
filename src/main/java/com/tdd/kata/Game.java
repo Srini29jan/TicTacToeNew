@@ -49,24 +49,6 @@ public class Game {
         return '\0';
     }
 
-    private boolean isThirdRowFilledByPlayerO() {
-        return getPlayerAt(POSITION_TWO, POSITION_ZERO) == PLAYER_O
-                && getPlayerAt(POSITION_TWO, POSITION_ONE) == PLAYER_O
-                && getPlayerAt(POSITION_TWO, POSITION_TWO) == PLAYER_O;
-    }
-
-    private boolean isThirdRowFilledByPlayerX() {
-        return getPlayerAt(POSITION_TWO, POSITION_ZERO) == PLAYER_X
-                && getPlayerAt(POSITION_TWO, POSITION_ONE) == PLAYER_X
-                && getPlayerAt(POSITION_TWO, POSITION_TWO) == PLAYER_X;
-    }
-
-    private boolean isSecondRowFilledByPlayer(char player) {
-        return getPlayerAt(POSITION_ONE, POSITION_ZERO) == player
-                && getPlayerAt(POSITION_ONE, POSITION_ONE) == player
-                && getPlayerAt(POSITION_ONE, POSITION_TWO) == player;
-    }
-
     private boolean isRowFilledByPlayer(int rowPosition, char player) {
         return getPlayerAt(rowPosition, POSITION_ZERO) == player
                 && getPlayerAt(rowPosition, POSITION_ONE) == player
