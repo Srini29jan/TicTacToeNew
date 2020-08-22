@@ -6,12 +6,16 @@ import org.junit.Test;
 import static org.junit.Assert.assertThat;
 
 public class GameTest {
+
+    private static final int POSITION_ZERO = 0;
+    private static final char PLAYER_X = 'X';
+
     @Test
     public void checkIfXIsFirstPlayerAfterFirstPlay() {
         Game game = new Game();
 
-        game.playAt(0, 0);
+        game.playAt(POSITION_ZERO, POSITION_ZERO);
 
-        assertThat(game.getPlayerAt(0, 0), Is.is('X'));
+        assertThat(game.getPlayerAt(POSITION_ZERO, POSITION_ZERO), Is.is(PLAYER_X));
     }
 }
