@@ -47,9 +47,4 @@ public class Game {
                 && getPlayerAt(POSITION_ZERO, POSITION_TWO) == player;
     }
 
-    private boolean isFirstRowFilledByPlayerX() {
-        return getPlayerAt(POSITION_ZERO, POSITION_ZERO) == PLAYER_X
-                && getPlayerAt(POSITION_ZERO, POSITION_ONE) == PLAYER_X
-                && getPlayerAt(POSITION_ZERO, POSITION_TWO) == PLAYER_X;
-    }
 }
