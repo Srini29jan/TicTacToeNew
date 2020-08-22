@@ -7,7 +7,9 @@ import static org.junit.Assert.assertThat;
 
 public class GameTest {
 
+    private static final int POSITION_ONE = 1;
     private static final int POSITION_ZERO = 0;
+    private static final char PLAYER_O = 'O';
     private static final char PLAYER_X = 'X';
 
     @Test
@@ -24,8 +26,8 @@ public class GameTest {
         Game game = new Game();
 
         game.playAt(POSITION_ZERO, POSITION_ZERO);
-        game.playAt(POSITION_ZERO, 1);
+        game.playAt(POSITION_ZERO, POSITION_ONE);
 
-        assertThat(game.getPlayerAt(POSITION_ZERO, 1), Is.is('O'));
+        assertThat(game.getPlayerAt(POSITION_ZERO, POSITION_ONE), Is.is(PLAYER_O));
     }
 }
