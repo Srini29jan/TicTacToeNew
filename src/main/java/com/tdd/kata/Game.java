@@ -40,13 +40,17 @@ public class Game {
             return PLAYER_O;
         }
 
-        if (getPlayerAt(POSITION_ZERO, POSITION_TWO) == PLAYER_X
-                && getPlayerAt(POSITION_ONE, POSITION_TWO) == PLAYER_X
-                && getPlayerAt(POSITION_TWO, POSITION_TWO) == PLAYER_X) {
+        if (isThirdColumnFilledByPlayerX()) {
             return PLAYER_X;
         }
 
         return '\0';
+    }
+
+    private boolean isThirdColumnFilledByPlayerX() {
+        return getPlayerAt(POSITION_ZERO, POSITION_TWO) == PLAYER_X
+                && getPlayerAt(POSITION_ONE, POSITION_TWO) == PLAYER_X
+                && getPlayerAt(POSITION_TWO, POSITION_TWO) == PLAYER_X;
     }
 
     private boolean isSecondColumnFilledByPlayer(char player) {
