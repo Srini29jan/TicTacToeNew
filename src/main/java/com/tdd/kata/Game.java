@@ -42,13 +42,17 @@ public class Game {
             return PLAYER_X;
         }
 
-        if (getPlayerAt(POSITION_TWO, POSITION_ZERO) == PLAYER_O
-                && getPlayerAt(POSITION_TWO, POSITION_ONE) == PLAYER_O
-                && getPlayerAt(POSITION_TWO, POSITION_TWO) == PLAYER_O) {
+        if (isThirdRowFilledByPlayerO()) {
             return PLAYER_O;
         }
 
         return '\0';
+    }
+
+    private boolean isThirdRowFilledByPlayerO() {
+        return getPlayerAt(POSITION_TWO, POSITION_ZERO) == PLAYER_O
+                && getPlayerAt(POSITION_TWO, POSITION_ONE) == PLAYER_O
+                && getPlayerAt(POSITION_TWO, POSITION_TWO) == PLAYER_O;
     }
 
     private boolean isThirdRowFilledByPlayerX() {
