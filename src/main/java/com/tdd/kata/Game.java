@@ -34,16 +34,16 @@ public class Game {
             return PLAYER_X;
         }
 
-        if (isAnyRowFilledByPlayerO()) {
+        if (isAnyRowFilledByPlayerO(PLAYER_O)) {
             return PLAYER_O;
         }
 
         return '\0';
     }
 
-    private boolean isAnyRowFilledByPlayerO() {
-        return isRowFilledByPlayer(POSITION_ZERO, PLAYER_O) || isRowFilledByPlayer(POSITION_ONE, PLAYER_O)
-                || isRowFilledByPlayer(POSITION_TWO, PLAYER_O);
+    private boolean isAnyRowFilledByPlayerO(char playerO) {
+        return isRowFilledByPlayer(POSITION_ZERO, playerO) || isRowFilledByPlayer(POSITION_ONE, playerO)
+                || isRowFilledByPlayer(POSITION_TWO, playerO);
     }
 
     private boolean isAnyRowFilledByPlayerX() {
