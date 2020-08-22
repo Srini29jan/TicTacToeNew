@@ -30,19 +30,19 @@ public class Game {
     }
 
     public char getWinner() {
-        if (isFirstRowFilledByPlayer(PLAYER_X, POSITION_ZERO) || isFirstRowFilledByPlayer(PLAYER_X, POSITION_ONE)) {
+        if (isRowFilledByPlayer(POSITION_ZERO, PLAYER_X) || isRowFilledByPlayer(POSITION_ONE, PLAYER_X)) {
             return PLAYER_X;
         }
 
-        if (isFirstRowFilledByPlayer(PLAYER_O, POSITION_ZERO) || isFirstRowFilledByPlayer(PLAYER_O, POSITION_ONE)) {
+        if (isRowFilledByPlayer(POSITION_ZERO, PLAYER_O) || isRowFilledByPlayer(POSITION_ONE, PLAYER_O)) {
             return PLAYER_O;
         }
 
-        if (isFirstRowFilledByPlayer(PLAYER_X, POSITION_TWO)) {
+        if (isRowFilledByPlayer(POSITION_TWO, PLAYER_X)) {
             return PLAYER_X;
         }
 
-        if (isFirstRowFilledByPlayer(PLAYER_O, POSITION_TWO)) {
+        if (isRowFilledByPlayer(POSITION_TWO, PLAYER_O)) {
             return PLAYER_O;
         }
 
@@ -67,10 +67,10 @@ public class Game {
                 && getPlayerAt(POSITION_ONE, POSITION_TWO) == player;
     }
 
-    private boolean isFirstRowFilledByPlayer(char player, int positionZero) {
-        return getPlayerAt(positionZero, POSITION_ZERO) == player
-                && getPlayerAt(positionZero, POSITION_ONE) == player
-                && getPlayerAt(positionZero, POSITION_TWO) == player;
+    private boolean isRowFilledByPlayer(int rowPosition, char player) {
+        return getPlayerAt(rowPosition, POSITION_ZERO) == player
+                && getPlayerAt(rowPosition, POSITION_ONE) == player
+                && getPlayerAt(rowPosition, POSITION_TWO) == player;
     }
 
 }
