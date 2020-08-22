@@ -38,7 +38,7 @@ public class Game {
             return PLAYER_O;
         }
 
-        if (isSecondColumnFilledByPlayerX()) {
+        if (isSecondColumnFilledByPlayerO(PLAYER_X)) {
             return PLAYER_X;
         }
 
