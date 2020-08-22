@@ -46,11 +46,6 @@ public class Game {
                 || isRowFilledByPlayer(POSITION_TWO, player);
     }
 
-    private boolean isAnyRowFilledByPlayerX() {
-        return isRowFilledByPlayer(POSITION_ZERO, PLAYER_X) || isRowFilledByPlayer(POSITION_ONE, PLAYER_X)
-                || isRowFilledByPlayer(POSITION_TWO, PLAYER_X);
-    }
-
     private boolean isRowFilledByPlayer(int rowPosition, char player) {
         return getPlayerAt(rowPosition, POSITION_ZERO) == player
                 && getPlayerAt(rowPosition, POSITION_ONE) == player
