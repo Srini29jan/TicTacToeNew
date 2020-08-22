@@ -38,13 +38,17 @@ public class Game {
             return PLAYER_O;
         }
 
-        if (getPlayerAt(POSITION_ZERO, POSITION_ONE) == PLAYER_X
-                && getPlayerAt(POSITION_ONE, POSITION_ONE) == PLAYER_X
-                && getPlayerAt(POSITION_TWO, POSITION_ONE) == PLAYER_X) {
+        if (isSecondColumnFilledByPlayerX()) {
             return PLAYER_X;
         }
 
         return '\0';
+    }
+
+    private boolean isSecondColumnFilledByPlayerX() {
+        return getPlayerAt(POSITION_ZERO, POSITION_ONE) == PLAYER_X
+                && getPlayerAt(POSITION_ONE, POSITION_ONE) == PLAYER_X
+                && getPlayerAt(POSITION_TWO, POSITION_ONE) == PLAYER_X;
     }
 
     private boolean isFirstColumnFilledByPlayer(char player) {
