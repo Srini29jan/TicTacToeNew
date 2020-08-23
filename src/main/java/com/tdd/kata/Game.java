@@ -44,17 +44,17 @@ public class Game {
             return PLAYER_X;
         }
 
-        if (isRightTopToLeftBottomDiagonalFilledByPlayerO()) {
+        if (isRightTopToLeftBottomDiagonalFilledByPlayerO(PLAYER_O)) {
             return PLAYER_O;
         }
 
         return '\0';
     }
 
-    private boolean isRightTopToLeftBottomDiagonalFilledByPlayerO() {
-        return getPlayerAt(POSITION_ZERO, POSITION_TWO) == PLAYER_O
-                && getPlayerAt(POSITION_ONE, POSITION_ONE) == PLAYER_O
-                && getPlayerAt(POSITION_TWO, POSITION_ZERO) == PLAYER_O;
+    private boolean isRightTopToLeftBottomDiagonalFilledByPlayerO(char playerO) {
+        return getPlayerAt(POSITION_ZERO, POSITION_TWO) == playerO
+                && getPlayerAt(POSITION_ONE, POSITION_ONE) == playerO
+                && getPlayerAt(POSITION_TWO, POSITION_ZERO) == playerO;
     }
 
     private boolean isRightTopToLeftBottomDiagonalFilledByPlayerX() {
