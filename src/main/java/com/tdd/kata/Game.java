@@ -42,17 +42,17 @@ public class Game {
             return PLAYER_X;
         }
 
-        if (isLeftTopToRightBottomDiagonalFilledByPlayerO()) {
+        if (isLeftTopToRightBottomDiagonalFilledByPlayerO(PLAYER_O)) {
             return PLAYER_O;
         }
 
         return '\0';
     }
 
-    private boolean isLeftTopToRightBottomDiagonalFilledByPlayerO() {
-        return getPlayerAt(POSITION_ZERO, POSITION_ZERO) == PLAYER_O
-                && getPlayerAt(POSITION_ONE, POSITION_ONE) == PLAYER_O
-                && getPlayerAt(POSITION_TWO, POSITION_TWO) == PLAYER_O;
+    private boolean isLeftTopToRightBottomDiagonalFilledByPlayerO(char playerO) {
+        return getPlayerAt(POSITION_ZERO, POSITION_ZERO) == playerO
+                && getPlayerAt(POSITION_ONE, POSITION_ONE) == playerO
+                && getPlayerAt(POSITION_TWO, POSITION_TWO) == playerO;
     }
 
     private boolean isLeftTopToRightBottomDiagonalFilledByPlayerX() {
