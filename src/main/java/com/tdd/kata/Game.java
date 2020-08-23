@@ -36,16 +36,16 @@ public class Game {
         }
 
         if (isAnyRowFilledByPlayer(PLAYER_O) || isAnyColumnFilledByPlayer(PLAYER_O)
-                || isAnyDiagonalFilledByPlayerO()) {
+                || isAnyDiagonalFilledByPlayerO(PLAYER_O)) {
             return PLAYER_O;
         }
 
         return '\0';
     }
 
-    private boolean isAnyDiagonalFilledByPlayerO() {
-        return isLeftTopToRightBottomDiagonalFilledByPlayer(PLAYER_O)
-                || isRightTopToLeftBottomDiagonalFilledByPlayer(PLAYER_O);
+    private boolean isAnyDiagonalFilledByPlayerO(char playerO) {
+        return isLeftTopToRightBottomDiagonalFilledByPlayer(playerO)
+                || isRightTopToLeftBottomDiagonalFilledByPlayer(playerO);
     }
 
     private boolean isAnyDiagonalFilledByPlayerX() {
