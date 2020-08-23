@@ -48,11 +48,6 @@ public class Game {
                 || isRightTopToLeftBottomDiagonalFilledByPlayer(player);
     }
 
-    private boolean isAnyDiagonalFilledByPlayerX() {
-        return isLeftTopToRightBottomDiagonalFilledByPlayer(PLAYER_X)
-                || isRightTopToLeftBottomDiagonalFilledByPlayer(PLAYER_X);
-    }
-
     private boolean isRightTopToLeftBottomDiagonalFilledByPlayer(char player) {
         return getPlayerAt(POSITION_ZERO, POSITION_TWO) == player
                 && getPlayerAt(POSITION_ONE, POSITION_ONE) == player
