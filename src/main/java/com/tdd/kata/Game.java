@@ -31,8 +31,7 @@ public class Game {
 
     public char getWinner() {
         if (isAnyRowFilledByPlayer(PLAYER_X) || isAnyColumnFilledByPlayer(PLAYER_X)
-                || isLeftTopToRightBottomDiagonalFilledByPlayer(PLAYER_X)
-                || isRightTopToLeftBottomDiagonalFilledByPlayer(PLAYER_X)) {
+                || isAnyDiagonalFilledByPlayerX()) {
             return PLAYER_X;
         }
 
@@ -43,6 +42,11 @@ public class Game {
         }
 
         return '\0';
+    }
+
+    private boolean isAnyDiagonalFilledByPlayerX() {
+        return isLeftTopToRightBottomDiagonalFilledByPlayer(PLAYER_X)
+                || isRightTopToLeftBottomDiagonalFilledByPlayer(PLAYER_X);
     }
 
     private boolean isRightTopToLeftBottomDiagonalFilledByPlayer(char player) {
