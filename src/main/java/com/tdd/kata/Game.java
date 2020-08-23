@@ -40,7 +40,7 @@ public class Game {
             return PLAYER_O;
         }
 
-        if (isRightTopToLeftBottomDiagonalFilledByPlayerX()) {
+        if (isRightTopToLeftBottomDiagonalFilledByPlayerO(PLAYER_X)) {
             return PLAYER_X;
         }
 
