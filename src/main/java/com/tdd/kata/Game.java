@@ -38,21 +38,21 @@ public class Game {
             return PLAYER_O;
         }
 
-        if (isLeftTopToRightBottomDiagonalFilledByPlayerX()) {
+        if (isLeftTopToRightBottomDiagonalFilledByPlayer(PLAYER_X)) {
             return PLAYER_X;
         }
 
-        if (isLeftTopToRightBottomDiagonalFilledByPlayerO(PLAYER_O)) {
+        if (isLeftTopToRightBottomDiagonalFilledByPlayer(PLAYER_O)) {
             return PLAYER_O;
         }
 
         return '\0';
     }
 
-    private boolean isLeftTopToRightBottomDiagonalFilledByPlayerO(char playerO) {
-        return getPlayerAt(POSITION_ZERO, POSITION_ZERO) == playerO
-                && getPlayerAt(POSITION_ONE, POSITION_ONE) == playerO
-                && getPlayerAt(POSITION_TWO, POSITION_TWO) == playerO;
+    private boolean isLeftTopToRightBottomDiagonalFilledByPlayer(char player) {
+        return getPlayerAt(POSITION_ZERO, POSITION_ZERO) == player
+                && getPlayerAt(POSITION_ONE, POSITION_ONE) == player
+                && getPlayerAt(POSITION_TWO, POSITION_TWO) == player;
     }
 
     private boolean isLeftTopToRightBottomDiagonalFilledByPlayerX() {
