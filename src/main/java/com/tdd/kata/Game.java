@@ -31,21 +31,21 @@ public class Game {
 
     public char getWinner() {
         if (isAnyRowFilledByPlayer(PLAYER_X) || isAnyColumnFilledByPlayer(PLAYER_X)
-                || isAnyDiagonalFilledByPlayerO(PLAYER_X)) {
+                || isAnyDiagonalFilledByPlayer(PLAYER_X)) {
             return PLAYER_X;
         }
 
         if (isAnyRowFilledByPlayer(PLAYER_O) || isAnyColumnFilledByPlayer(PLAYER_O)
-                || isAnyDiagonalFilledByPlayerO(PLAYER_O)) {
+                || isAnyDiagonalFilledByPlayer(PLAYER_O)) {
             return PLAYER_O;
         }
 
         return '\0';
     }
 
-    private boolean isAnyDiagonalFilledByPlayerO(char playerO) {
-        return isLeftTopToRightBottomDiagonalFilledByPlayer(playerO)
-                || isRightTopToLeftBottomDiagonalFilledByPlayer(playerO);
+    private boolean isAnyDiagonalFilledByPlayer(char player) {
+        return isLeftTopToRightBottomDiagonalFilledByPlayer(player)
+                || isRightTopToLeftBottomDiagonalFilledByPlayer(player);
     }
 
     private boolean isAnyDiagonalFilledByPlayerX() {
