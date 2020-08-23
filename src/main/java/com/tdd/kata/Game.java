@@ -31,7 +31,7 @@ public class Game {
 
     public char getWinner() {
         if (isAnyRowFilledByPlayer(PLAYER_X) || isAnyColumnFilledByPlayer(PLAYER_X)
-                || isAnyDiagonalFilledByPlayerX()) {
+                || isAnyDiagonalFilledByPlayerO(PLAYER_X)) {
             return PLAYER_X;
         }
 
