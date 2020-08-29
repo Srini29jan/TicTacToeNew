@@ -8,6 +8,7 @@ import static org.junit.Assert.assertTrue;
 
 public class GameRunnerTest {
 
+    private static final String FIRST_ROW = "1 2 3";
     private static final String POSITION_INFORMATION_MESSAGE = "Position of each box is represented by a number as below";
     private static final String WELCOME_MESSAGE = "Welcome to TicTacToe 3X3";
     private TestableGameRunner testableGameRunner;
@@ -41,8 +42,8 @@ public class GameRunnerTest {
         String message = testableGameRunner.getMessage();
 
         assertNotNull(message);
-        assertTrue(message.contains("1 2 3"));
-        assertTrue(message.indexOf("1 2 3") > message.indexOf(POSITION_INFORMATION_MESSAGE));
+        assertTrue(message.contains(FIRST_ROW));
+        assertTrue(message.indexOf(FIRST_ROW) > message.indexOf(POSITION_INFORMATION_MESSAGE));
     }
 
     private class TestableGameRunner extends GameRunner {
