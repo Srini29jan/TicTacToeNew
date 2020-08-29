@@ -8,12 +8,13 @@ public class GameRunner {
     private static final String POSITION_INFORMATION_MESSAGE = "Position of each box is represented by a number as below";
     private static final String WELCOME_MESSAGE = "Welcome to TicTacToe 3X3";
     public static final String FIRST_ROW = "1 2 3";
+    public static final String SECOND_ROW = "4 5 6";
 
     public void play() {
         print(WELCOME_MESSAGE);
         print(POSITION_INFORMATION_MESSAGE);
         print(FIRST_ROW);
-        print("4 5 6");
+        print(SECOND_ROW);
     }
 
     protected void print(String message) {
