@@ -15,6 +15,7 @@ public class GameRunnerTest {
     private static final String THIRD_ROW = "7 8 9";
     private static final String WELCOME_MESSAGE = "Welcome to TicTacToe 3X3";
     private static final String STARTING_PLAYER_INFORMATION = "Game always starts with player 'X'";
+    private static final String MARK_YOUR_POSITION_INSTRUCTION = "Mark your position:";
     private TestableGameRunner testableGameRunner;
 
     @Before
@@ -96,8 +97,8 @@ public class GameRunnerTest {
         String message = testableGameRunner.getMessage();
 
         assertNotNull(message);
-        assertTrue(message.contains("Mark your position:"));
-        assertTrue(message.indexOf("Mark your position:") > message.indexOf(STARTING_PLAYER_INFORMATION));
+        assertTrue(message.contains(MARK_YOUR_POSITION_INSTRUCTION));
+        assertTrue(message.indexOf(MARK_YOUR_POSITION_INSTRUCTION) > message.indexOf(STARTING_PLAYER_INFORMATION));
     }
 
     private class TestableGameRunner extends GameRunner {
