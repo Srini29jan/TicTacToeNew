@@ -16,6 +16,7 @@ public class GameRunnerTest {
     private static final String WELCOME_MESSAGE = "Welcome to TicTacToe 3X3";
     private static final String STARTING_PLAYER_INFORMATION = "Game always starts with player 'X'";
     private static final String MARK_YOUR_POSITION_INSTRUCTION = "Mark your position:";
+    private static final String LINE_BREAK = "\n";
     private TestableGameRunner testableGameRunner;
 
     @Before
@@ -103,13 +104,13 @@ public class GameRunnerTest {
 
     @Test
     public void initialInstructionsShouldBePrintedWithLineBreaks() {
-        String expectedMessage = new StringBuilder(WELCOME_MESSAGE).append("\n")
-                .append(POSITION_INFORMATION_MESSAGE).append("\n")
-                .append(FIRST_ROW).append("\n")
-                .append(SECOND_ROW).append("\n")
-                .append(THIRD_ROW).append("\n")
-                .append(CHOOSE_POSITION_INSTRUCTION).append("\n")
-                .append(STARTING_PLAYER_INFORMATION).append("\n")
+        String expectedMessage = new StringBuilder(WELCOME_MESSAGE).append(LINE_BREAK)
+                .append(POSITION_INFORMATION_MESSAGE).append(LINE_BREAK)
+                .append(FIRST_ROW).append(LINE_BREAK)
+                .append(SECOND_ROW).append(LINE_BREAK)
+                .append(THIRD_ROW).append(LINE_BREAK)
+                .append(CHOOSE_POSITION_INSTRUCTION).append(LINE_BREAK)
+                .append(STARTING_PLAYER_INFORMATION).append(LINE_BREAK)
                 .append(MARK_YOUR_POSITION_INSTRUCTION).toString();
 
         testableGameRunner.play();
