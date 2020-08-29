@@ -68,6 +68,16 @@ public class GameRunnerTest {
         assertTrue(message.indexOf(THIRD_ROW) > message.indexOf(SECOND_ROW));
     }
 
+    @Test
+    public void choosePositionInstructionShouldBePrintedAfterThirdRowInformationMessage() {
+        testableGameRunner.play();
+        String message = testableGameRunner.getMessage();
+
+        assertNotNull(message);
+        assertTrue(message.contains("Choose one of these positions on a player's turn"));
+        assertTrue(message.indexOf("Choose one of these positions on a player's turn") > message.indexOf(THIRD_ROW));
+    }
+
     private class TestableGameRunner extends GameRunner {
 
         private final StringBuilder message = new StringBuilder();

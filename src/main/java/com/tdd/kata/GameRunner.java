@@ -17,6 +17,7 @@ public class GameRunner {
         print(FIRST_ROW);
         print(SECOND_ROW);
         print(THIRD_ROW);
+        print("Choose one of these positions on a player's turn");
     }
 
     protected void print(String message) {
