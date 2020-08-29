@@ -21,6 +21,7 @@ public class GameRunner {
         print(THIRD_ROW);
         print(CHOOSE_POSITION_INSTRUCTION);
         print(STARTING_PLAYER_INFORMATION);
+        print("Mark your position:");
     }
 
     protected void print(String message) {

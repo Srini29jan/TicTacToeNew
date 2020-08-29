@@ -90,6 +90,16 @@ public class GameRunnerTest {
         assertTrue(message.indexOf(STARTING_PLAYER_INFORMATION) > message.indexOf(CHOOSE_POSITION_INSTRUCTION));
     }
 
+    @Test
+    public void markFirstPositionInstructionShouldBePrintedAfterStartingPlayerInformationMessage() {
+        testableGameRunner.play();
+        String message = testableGameRunner.getMessage();
+
+        assertNotNull(message);
+        assertTrue(message.contains("Mark your position:"));
+        assertTrue(message.indexOf("Mark your position:") > message.indexOf(STARTING_PLAYER_INFORMATION));
+    }
+
     private class TestableGameRunner extends GameRunner {
 
         private final StringBuilder message = new StringBuilder();
