@@ -121,7 +121,6 @@ public class GameRunnerTest {
 
     private class TestableGameRunner extends GameRunner {
 
-
         private final StringBuilder message = new StringBuilder();
 
         @Override
