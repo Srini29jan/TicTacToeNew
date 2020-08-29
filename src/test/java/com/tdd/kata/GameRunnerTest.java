@@ -1,9 +1,9 @@
 package com.tdd.kata;
 
-import org.hamcrest.core.Is;
 import org.junit.Test;
 
-import static org.junit.Assert.assertThat;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertTrue;
 
 public class GameRunnerTest {
     @Test
@@ -13,20 +13,35 @@ public class GameRunnerTest {
 
         testableGameRunner.play();
 
-        assertThat(testableGameRunner.getMessage(), Is.is(welcomeMessage));
+        String message = testableGameRunner.getMessage();
+        assertNotNull(message);
+        assertTrue(message.contains(welcomeMessage));
+    }
+
+    @Test
+    public void positionInformationMessageShouldBePrintedAfterWelcomeMessage() {
+        String welcomeMessage = "Welcome to TicTacToe 3X3";
+        String positionInformationMessage = "Position of each box is represented by a number as below";
+        TestableGameRunner testableGameRunner = new TestableGameRunner();
+
+        testableGameRunner.play();
+
+        String message = testableGameRunner.getMessage();
+        assertNotNull(message);
+        assertTrue(message.indexOf(positionInformationMessage) > message.indexOf(welcomeMessage));
     }
 
     private class TestableGameRunner extends GameRunner {
 
-        private String message;
+        private final StringBuilder message = new StringBuilder();
 
         @Override
         protected void print(String message) {
-            this.message = message;
+            this.message.append(message);
         }
 
         public String getMessage() {
-            return message;
+            return message.toString();
         }
     }
 }

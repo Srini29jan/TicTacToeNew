@@ -8,6 +8,7 @@ public class GameRunner {
 
     public void play() {
         print("Welcome to TicTacToe 3X3");
+        print("Position of each box is represented by a number as below");
     }
 
     protected void print(String message) {
