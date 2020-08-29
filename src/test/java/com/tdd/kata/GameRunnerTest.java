@@ -10,8 +10,9 @@ public class GameRunnerTest {
 
     private static final String FIRST_ROW = "1 2 3";
     private static final String POSITION_INFORMATION_MESSAGE = "Position of each box is represented by a number as below";
-    private static final String WELCOME_MESSAGE = "Welcome to TicTacToe 3X3";
     private static final String SECOND_ROW = "4 5 6";
+    private static final String THIRD_ROW = "7 8 9";
+    private static final String WELCOME_MESSAGE = "Welcome to TicTacToe 3X3";
     private TestableGameRunner testableGameRunner;
 
     @Before
@@ -63,8 +64,8 @@ public class GameRunnerTest {
         String message = testableGameRunner.getMessage();
 
         assertNotNull(message);
-        assertTrue(message.contains("7 8 9"));
-        assertTrue(message.indexOf("7 8 9") > message.indexOf(SECOND_ROW));
+        assertTrue(message.contains(THIRD_ROW));
+        assertTrue(message.indexOf(THIRD_ROW) > message.indexOf(SECOND_ROW));
     }
 
     private class TestableGameRunner extends GameRunner {
