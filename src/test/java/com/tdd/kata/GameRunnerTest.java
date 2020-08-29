@@ -19,25 +19,20 @@ public class GameRunnerTest {
 
     @Test
     public void welcomeMessageShouldBePrintedOnGameStart() {
-        String welcomeMessage = WELCOME_MESSAGE;
-
         testableGameRunner.play();
 
         String message = testableGameRunner.getMessage();
         assertNotNull(message);
-        assertTrue(message.contains(welcomeMessage));
+        assertTrue(message.contains(WELCOME_MESSAGE));
     }
 
     @Test
     public void positionInformationMessageShouldBePrintedAfterWelcomeMessage() {
-        String welcomeMessage = WELCOME_MESSAGE;
-        String positionInformationMessage = POSITION_INFORMATION_MESSAGE;
-
         testableGameRunner.play();
 
         String message = testableGameRunner.getMessage();
         assertNotNull(message);
-        assertTrue(message.indexOf(positionInformationMessage) > message.indexOf(welcomeMessage));
+        assertTrue(message.indexOf(POSITION_INFORMATION_MESSAGE) > message.indexOf(WELCOME_MESSAGE));
     }
 
     private class TestableGameRunner extends GameRunner {
