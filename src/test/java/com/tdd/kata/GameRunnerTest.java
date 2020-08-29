@@ -8,6 +8,7 @@ import static org.junit.Assert.assertTrue;
 
 public class GameRunnerTest {
 
+    private static final String CHOOSE_POSITION_INSTRUCTION = "Choose one of these positions on a player's turn";
     private static final String FIRST_ROW = "1 2 3";
     private static final String POSITION_INFORMATION_MESSAGE = "Position of each box is represented by a number as below";
     private static final String SECOND_ROW = "4 5 6";
@@ -74,8 +75,8 @@ public class GameRunnerTest {
         String message = testableGameRunner.getMessage();
 
         assertNotNull(message);
-        assertTrue(message.contains("Choose one of these positions on a player's turn"));
-        assertTrue(message.indexOf("Choose one of these positions on a player's turn") > message.indexOf(THIRD_ROW));
+        assertTrue(message.contains(CHOOSE_POSITION_INSTRUCTION));
+        assertTrue(message.indexOf(CHOOSE_POSITION_INSTRUCTION) > message.indexOf(THIRD_ROW));
     }
 
     private class TestableGameRunner extends GameRunner {
