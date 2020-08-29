@@ -14,19 +14,24 @@ public class GameRunner {
     private static final String STARTING_PLAYER_INFORMATION = "Game always starts with player 'X'";
     private static final String MARK_YOUR_POSITION_INSTRUCTION = "Mark your position:";
 
+    public static void main(String[] args) {
+        new GameRunner().play();
+    }
+
     public void play() {
         printInitialInstructions();
     }
 
     private void printInitialInstructions() {
-        print(WELCOME_MESSAGE);
-        print(POSITION_INFORMATION_MESSAGE);
-        print(FIRST_ROW);
-        print(SECOND_ROW);
-        print(THIRD_ROW);
-        print(CHOOSE_POSITION_INSTRUCTION);
-        print(STARTING_PLAYER_INFORMATION);
-        print(MARK_YOUR_POSITION_INSTRUCTION);
+        StringBuilder initialInstructionsBuilder = new StringBuilder(WELCOME_MESSAGE)
+                .append(POSITION_INFORMATION_MESSAGE)
+                .append(FIRST_ROW)
+                .append(SECOND_ROW)
+                .append(THIRD_ROW)
+                .append(CHOOSE_POSITION_INSTRUCTION)
+                .append(STARTING_PLAYER_INFORMATION)
+                .append(MARK_YOUR_POSITION_INSTRUCTION);
+        print(initialInstructionsBuilder.toString());
     }
 
     protected void print(String message) {
