@@ -1,15 +1,25 @@
 package com.tdd.kata;
 
+import org.junit.Before;
 import org.junit.Test;
 
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 
 public class GameRunnerTest {
+
+    private static final String POSITION_INFORMATION_MESSAGE = "Position of each box is represented by a number as below";
+    private static final String WELCOME_MESSAGE = "Welcome to TicTacToe 3X3";
+    private TestableGameRunner testableGameRunner;
+
+    @Before
+    public void setUp() {
+        testableGameRunner = new TestableGameRunner();
+    }
+
     @Test
     public void welcomeMessageShouldBePrintedOnGameStart() {
-        String welcomeMessage = "Welcome to TicTacToe 3X3";
-        TestableGameRunner testableGameRunner = new TestableGameRunner();
+        String welcomeMessage = WELCOME_MESSAGE;
 
         testableGameRunner.play();
 
@@ -20,9 +30,8 @@ public class GameRunnerTest {
 
     @Test
     public void positionInformationMessageShouldBePrintedAfterWelcomeMessage() {
-        String welcomeMessage = "Welcome to TicTacToe 3X3";
-        String positionInformationMessage = "Position of each box is represented by a number as below";
-        TestableGameRunner testableGameRunner = new TestableGameRunner();
+        String welcomeMessage = WELCOME_MESSAGE;
+        String positionInformationMessage = POSITION_INFORMATION_MESSAGE;
 
         testableGameRunner.play();
 
