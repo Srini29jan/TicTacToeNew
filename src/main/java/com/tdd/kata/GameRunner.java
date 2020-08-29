@@ -11,6 +11,7 @@ public class GameRunner {
     private static final String THIRD_ROW = "7 8 9";
     private static final String WELCOME_MESSAGE = "Welcome to TicTacToe 3X3";
     private static final String CHOOSE_POSITION_INSTRUCTION = "Choose one of these positions on a player's turn";
+    private static final String STARTING_PLAYER_INFORMATION = "Game always starts with player 'X'";
 
     public void play() {
         print(WELCOME_MESSAGE);
@@ -19,7 +20,7 @@ public class GameRunner {
         print(SECOND_ROW);
         print(THIRD_ROW);
         print(CHOOSE_POSITION_INSTRUCTION);
-        print("Game always starts with player 'X'");
+        print(STARTING_PLAYER_INFORMATION);
     }
 
     protected void print(String message) {
