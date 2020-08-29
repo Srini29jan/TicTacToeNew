@@ -48,7 +48,7 @@ public class GameRunnerTest {
     }
 
     @Test
-    public void firstRowInformationMessageShouldBePrintedAfterFirstRowInformationMessage() {
+    public void secondRowInformationMessageShouldBePrintedAfterFirstRowInformationMessage() {
         testableGameRunner.play();
         String message = testableGameRunner.getMessage();
 
