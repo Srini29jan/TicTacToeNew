@@ -13,6 +13,7 @@ public class GameRunner {
         print(WELCOME_MESSAGE);
         print(POSITION_INFORMATION_MESSAGE);
         print(FIRST_ROW);
+        print("4 5 6");
     }
 
     protected void print(String message) {
