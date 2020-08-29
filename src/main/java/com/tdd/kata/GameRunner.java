@@ -11,6 +11,7 @@ public class GameRunner {
     public void play() {
         print(WELCOME_MESSAGE);
         print(POSITION_INFORMATION_MESSAGE);
+        print("1 2 3");
     }
 
     protected void print(String message) {
