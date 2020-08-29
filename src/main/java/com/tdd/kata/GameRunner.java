@@ -15,6 +15,7 @@ public class GameRunner {
         print(POSITION_INFORMATION_MESSAGE);
         print(FIRST_ROW);
         print(SECOND_ROW);
+        print("7 8 9");
     }
 
     protected void print(String message) {

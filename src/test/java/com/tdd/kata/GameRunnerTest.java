@@ -57,6 +57,16 @@ public class GameRunnerTest {
         assertTrue(message.indexOf(SECOND_ROW) > message.indexOf(FIRST_ROW));
     }
 
+    @Test
+    public void thirdRowInformationMessageShouldBePrintedAfterSecondRowInformationMessage() {
+        testableGameRunner.play();
+        String message = testableGameRunner.getMessage();
+
+        assertNotNull(message);
+        assertTrue(message.contains("7 8 9"));
+        assertTrue(message.indexOf("7 8 9") > message.indexOf(SECOND_ROW));
+    }
+
     private class TestableGameRunner extends GameRunner {
 
         private final StringBuilder message = new StringBuilder();
