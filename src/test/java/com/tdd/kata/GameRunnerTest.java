@@ -79,6 +79,16 @@ public class GameRunnerTest {
         assertTrue(message.indexOf(CHOOSE_POSITION_INSTRUCTION) > message.indexOf(THIRD_ROW));
     }
 
+    @Test
+    public void startingPlayerInformationShouldBePrintedAfterChoosePositionInstruction() {
+        testableGameRunner.play();
+        String message = testableGameRunner.getMessage();
+
+        assertNotNull(message);
+        assertTrue(message.contains("Game always starts with player 'X'"));
+        assertTrue(message.indexOf("Game always starts with player 'X'") > message.indexOf(CHOOSE_POSITION_INSTRUCTION));
+    }
+
     private class TestableGameRunner extends GameRunner {
 
         private final StringBuilder message = new StringBuilder();

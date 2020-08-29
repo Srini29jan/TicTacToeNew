@@ -19,6 +19,7 @@ public class GameRunner {
         print(SECOND_ROW);
         print(THIRD_ROW);
         print(CHOOSE_POSITION_INSTRUCTION);
+        print("Game always starts with player 'X'");
     }
 
     protected void print(String message) {
