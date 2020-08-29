@@ -15,6 +15,10 @@ public class GameRunner {
     private static final String MARK_YOUR_POSITION_INSTRUCTION = "Mark your position:";
 
     public void play() {
+        printInitialInstructions();
+    }
+
+    private void printInitialInstructions() {
         print(WELCOME_MESSAGE);
         print(POSITION_INFORMATION_MESSAGE);
         print(FIRST_ROW);
