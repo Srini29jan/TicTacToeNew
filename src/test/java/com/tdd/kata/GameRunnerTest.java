@@ -1,10 +1,10 @@
 package com.tdd.kata;
 
+import org.hamcrest.core.Is;
 import org.junit.Before;
 import org.junit.Test;
 
-import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.*;
 
 public class GameRunnerTest {
 
@@ -101,7 +101,25 @@ public class GameRunnerTest {
         assertTrue(message.indexOf(MARK_YOUR_POSITION_INSTRUCTION) > message.indexOf(STARTING_PLAYER_INFORMATION));
     }
 
+    @Test
+    public void initialInstructionsShouldBePrintedWithLineBreaks() {
+        String expectedMessage = new StringBuilder(WELCOME_MESSAGE).append("\n")
+                .append(POSITION_INFORMATION_MESSAGE).append("\n")
+                .append(FIRST_ROW).append("\n")
+                .append(SECOND_ROW).append("\n")
+                .append(THIRD_ROW).append("\n")
+                .append(CHOOSE_POSITION_INSTRUCTION).append("\n")
+                .append(STARTING_PLAYER_INFORMATION).append("\n")
+                .append(MARK_YOUR_POSITION_INSTRUCTION).toString();
+
+        testableGameRunner.play();
+
+        assertNotNull(testableGameRunner.getMessage());
+        assertThat(testableGameRunner.getMessage(), Is.is(expectedMessage));
+    }
+
     private class TestableGameRunner extends GameRunner {
+
 
         private final StringBuilder message = new StringBuilder();
 

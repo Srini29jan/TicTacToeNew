@@ -23,13 +23,13 @@ public class GameRunner {
     }
 
     private void printInitialInstructions() {
-        StringBuilder initialInstructionsBuilder = new StringBuilder(WELCOME_MESSAGE)
-                .append(POSITION_INFORMATION_MESSAGE)
-                .append(FIRST_ROW)
-                .append(SECOND_ROW)
-                .append(THIRD_ROW)
-                .append(CHOOSE_POSITION_INSTRUCTION)
-                .append(STARTING_PLAYER_INFORMATION)
+        StringBuilder initialInstructionsBuilder = new StringBuilder(WELCOME_MESSAGE).append("\n")
+                .append(POSITION_INFORMATION_MESSAGE).append("\n")
+                .append(FIRST_ROW).append("\n")
+                .append(SECOND_ROW).append("\n")
+                .append(THIRD_ROW).append("\n")
+                .append(CHOOSE_POSITION_INSTRUCTION).append("\n")
+                .append(STARTING_PLAYER_INFORMATION).append("\n")
                 .append(MARK_YOUR_POSITION_INSTRUCTION);
         print(initialInstructionsBuilder.toString());
     }
