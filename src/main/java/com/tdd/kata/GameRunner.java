@@ -1,5 +1,6 @@
 package com.tdd.kata;
 
+import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -14,6 +15,11 @@ public class GameRunner {
     private static final String STARTING_PLAYER_INFORMATION = "Game always starts with player 'X'";
     private static final String MARK_YOUR_POSITION_INSTRUCTION = "Mark your position:";
     private static final String LINE_BREAK = "\n";
+    private final Scanner scanner;
+
+    public GameRunner() {
+        scanner = new Scanner(System.in);
+    }
 
     public static void main(String[] args) {
         new GameRunner().play();
@@ -21,6 +27,13 @@ public class GameRunner {
 
     public void play() {
         printInitialInstructions();
+        Game game = newGame();
+        int position = scanner.nextInt();
+        game.playAt(position);
+    }
+
+    protected Game newGame() {
+        return new Game();
     }
 
     private void printInitialInstructions() {

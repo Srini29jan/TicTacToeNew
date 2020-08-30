@@ -123,6 +123,12 @@ public class GameRunnerTest {
 
         private final StringBuilder message = new StringBuilder();
 
+        public void setGame(Game game) {
+            this.game = game;
+        }
+
+        private Game game;
+
         @Override
         protected void print(String message) {
             this.message.append(message);
@@ -130,6 +136,11 @@ public class GameRunnerTest {
 
         public String getMessage() {
             return message.toString();
+        }
+
+        @Override
+        protected Game newGame() {
+            return game;
         }
     }
 }
